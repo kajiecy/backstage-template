@@ -1,0 +1,33 @@
+.el-table {
+    border: 1px solid #d2d2d2;
+}
+.el-table thead th, .el-table thead tr {
+    font-size: 14px;
+    background-color: #f0f5fd;
+    color: #333333;
+    height: 36px;
+}
+.el-table th, .el-table tr {
+  height: 36px;
+}
+.el-table td {
+    font-size: 12px;
+}
+.el-table--border td, .el-table--border th, .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed {
+    border-right: 1px solid #d2d2d2;
+}
+.el-table td, .el-table th.is-leaf {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.el-color-picker--mini .el-color-picker__trigger{
+    opacity:0.0;
+    filter:Alpha(opacity=0); /* IE8 以及更早的浏览器 */
+}
+.el-button--mini, .el-button--mini.is-round{
+    padding: 7px 7px!important;
+}
+//修改快捷菜单弹框样式
+.el-popper[x-placement^=bottom]{
+    margin-top: 0!important;
+}

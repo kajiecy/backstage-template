@@ -1,0 +1,128 @@
+@import "variable";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #app {
+    font-family:微软雅黑,Arial,Helvetica,sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    height: 100%;
+}
+
+.color-theme {
+    color: $color-theme;
+}
+.bg-color {
+    background-color: $color-background;
+}
+.bg-theme {
+    background-color: $color-theme;
+}
+.color-theme{
+    color: $color-theme;
+}
+.border-theme{
+    border: 1px solid $color-theme;
+}
+.border-left-theme{
+    border-left: 1px solid $color-theme;
+}
+.border-right-theme{
+    border-right: 1px solid $color-theme;
+}
+.border-top-theme{
+    border-top: 1px solid $color-theme;
+}
+.border-bottom-theme{
+    border-bottom: 1px solid $color-theme;
+}
+.bw-1{
+    border-width: 1px;
+}
+.bw-2{
+    border-width: 2px;
+}
+.bw-3{
+    border-width: 3px;
+}
+.bw-5{
+    border-width: 5px;
+}
+.bw-10{
+    border-width: 10px;
+}
+
+.font-theme {
+    color: $color-font;
+}
+.title{
+    font-size: 16px;
+}
+.title-big{
+    font-size: 38px;
+}
+.content{
+    font-size: 14px;
+}
+.content-little{
+    font-size: 12px;
+}
+.title-font-color{
+    color: $sub-color-14;
+}
+.content-font-color{
+    color: $sub-color-15;
+}
+//详情页基本信息样式
+label.title-font-color{
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding-left: 13px;
+    border-left: 4px solid $color-theme;
+    display: inline-block;
+}
+.el-col-2.title-font-color{
+    height: 18px;
+    line-height: 18px;
+    padding-right: 5px;
+}
+.el-col-4.content-font-color label{
+    border: 1px solid #e9a52e;
+    padding: 2px 5px;
+    border-radius: 7px;
+    margin-left: 10px;
+    color: #e9a52e;
+    font-weight: bold;
+}
+
+.color-1{color: $sub-color-1;}
+.color-2{color: $sub-color-2;}
+.color-3{color: $sub-color-3;}
+.color-4{color: $sub-color-4;}
+.color-5{color: $sub-color-5;}
+
+.color-6{color: $sub-color-6;}
+.color-7{color: $sub-color-7;}
+.color-8{color: $sub-color-8;}
+.color-9{color: $sub-color-9;}
+.color-10{color: $sub-color-10;}
+
+.color-11{color: $sub-color-11;}
+.color-12{color: $sub-color-12;}
+.color-13{color: $sub-color-13;}
+.color-14{color: $sub-color-14;}
+.color-15{color: $sub-color-15;}
+
+.top-buttons{
+    width: 100%;
+    height: 0;
+    position: relative;
+    left: 0;
+    text-align: right;
+    top: -40px;
+    padding-right: 5px;
+}
