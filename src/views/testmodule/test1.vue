@@ -15,7 +15,6 @@
 <script>
     import detailTemplate from '@/views/components/detailTemplate.vue';
     import auditOpinion from '@/views/components/auditOpinion.vue';
-    import affix from  '@/views/components/affix';
     export default {
         name: "test1",
         data() {
@@ -88,7 +87,6 @@
         components: {
             detailTemplate,
             auditOpinion,
-            affix
         }
     }
 </script>
