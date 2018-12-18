@@ -173,7 +173,7 @@
                     padding: 5px 5px;
                 }
                 &:hover,&.is_active{
-                    background-color: $color-theme;
+                    //background-color: $color -theme;
                     border-radius: 10px;
                     box-shadow:2px 2px 10px #888888;;
                     .iconfont,span{
@@ -183,7 +183,7 @@
             }
             .div-menu-fold{
                 .iconfont,span{
-                    color: $color-theme;
+                    //color: $color- theme;
                     opacity:0.8;
                     filter:Alpha(opacity=80); /* IE8 以及更早的浏览器 */
                 }
@@ -205,7 +205,7 @@
         /*flex-direction:column;*/
         /*align-items:stretch;*/
         margin-right: 0;
-        background-color: $color-theme;
+        /*background-color: $color- theme;*/
         .header-body{
             width: 80px;
             height: 80px;
@@ -240,7 +240,7 @@
                 position: relative;
                 z-index: 9;
                 &:hover,&.is_active{
-                    background-color: $color-theme;
+                    /*background-color: $color -theme;*/
                     border-radius: 10px;
                     /*box-shadow:2px 2px 10px #888888;*/
                     filter:brightness(90%) ;
@@ -257,7 +257,7 @@
                         text-align: left;
                         position: relative;
                         width: 120px;
-                        background-color: $color-theme;
+                        /*background-color: $color -theme;*/
                         border-radius: 10px;
                         filter:brightness(90%) ;
                         z-index: 999;

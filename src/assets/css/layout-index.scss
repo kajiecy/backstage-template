@@ -42,14 +42,14 @@
         width: 100%;
         height: 330px;
         z-index: -1;
-        background-color: $color-theme;
+        //background-color: $color -theme;
     }
     &.left-menu-close{
         position: absolute;
         width: 100%;
         height: 0;
         z-index: -1;
-        background-color: $color-theme;
+        //background-color: $color -theme;
     }
 }
 .home-whole-back{
@@ -78,7 +78,7 @@
         div,.iconfont{
             color: white;
         }
-        background-color: $color-theme;
+        //background-color: $color -theme;
         -webkit-filter: brightness(125%); /* Chrome, Safari, Opera */
         filter: brightness(125%);
     }
@@ -88,7 +88,7 @@
         display: inline-block;
     }
     &:hover{
-        background-color: $color-theme;
+        //background-color: $color- theme;
         -webkit-filter: brightness(125%); /* Chrome, Safari, Opera */
         filter: brightness(125%);
     }
@@ -126,12 +126,12 @@
     border-radius: 0!important;
     transition: all 0s!important;
     .left-menu-open &{
-        background-color: $color-theme!important;
+        //background-color: $color- theme!important;
     }
     .left-menu-open &.is_open{
         background-color: rgba(255,255,255,0.6)!important;
         .iconfont{
-            color: $color-theme!important;
+            //color: $color- theme!important;
         }
     }
     .left-menu-close &.is_open{
@@ -180,25 +180,25 @@
         }
         &.is_active{
             .iconfont,div{
-                color:$color-theme
+                //color:$color -theme
             }
         }
         &:hover{
             background-color: white;
             .iconfont,div{
-                color:$color-theme
+                //color:$color- theme
             }
         }
     }
     .innertable-right{
         .dis_table_cell{
             .iconfont{
-                color:  $color-theme!important;
+                //color:  $color- theme!important;
             }
         }
     }
     .innertable-right .header-menu-right .iconfont{
-        color: $color-theme!important;
+        //color: $color -theme!important;
     }
 
     .select_product{
@@ -207,7 +207,7 @@
         -ms-user-select:none;
         user-select:none;
         .el-input__inner{
-            color:$color-theme;
+            //color:$color -theme;
             background-color: rgba(255,255,255,0);
             border-width: 0;
             font-size: 16px;
@@ -216,7 +216,7 @@
         }
         .el-input{
             .el-select__caret{
-                color:$color-theme;
+                //color:$color -theme;
             }
         }
     }

@@ -160,7 +160,7 @@
             position: fixed;
             right: 290px;
             bottom: 10px;
-            background-color: $color-theme;
+            //background-color: $color -theme;
             text-align: center;
             border-radius: 5px;
             .iconfont{

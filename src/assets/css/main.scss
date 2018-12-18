@@ -12,34 +12,11 @@ html, body, #app {
     font-size: 14px;
     height: 100%;
 }
-
-.color-theme {
-    color: $color-theme;
-}
 .bg-color {
     background-color: $color-background;
 }
-.bg-theme {
-    background-color: $color-theme;
-}
-.color-theme{
-    color: $color-theme;
-}
-.border-theme{
-    border: 1px solid $color-theme;
-}
-.border-left-theme{
-    border-left: 1px solid $color-theme;
-}
-.border-right-theme{
-    border-right: 1px solid $color-theme;
-}
-.border-top-theme{
-    border-top: 1px solid $color-theme;
-}
-.border-bottom-theme{
-    border-bottom: 1px solid $color-theme;
-}
+
+
 .bw-1{
     border-width: 1px;
 }
@@ -82,7 +59,7 @@ label.title-font-color{
     line-height: 20px;
     margin-bottom: 20px;
     padding-left: 13px;
-    border-left: 4px solid $color-theme;
+    //border-left: 4px solid $color -theme;
     display: inline-block;
 }
 .el-col-2.title-font-color{

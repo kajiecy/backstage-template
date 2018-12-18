@@ -5,7 +5,7 @@ import Main from '@/views/layout/Main.vue';
 export const innerLayoutRouter = {
     path: '/',
     name: 'innerLayoutRouter',
-    redirect: '/login',
+    redirect: '/home',
     component: Main,
     children: [
         {path: 'test1', name: 'test1',meta:{}, component: () => import('@/views/testmodule/test1.vue')},
