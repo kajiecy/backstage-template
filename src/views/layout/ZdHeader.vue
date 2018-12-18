@@ -1,5 +1,5 @@
 <template>
-    <header :class="$store.state.app.leftMenuOpenStatus">
+    <div class="div-header" :class="$store.state.app.leftMenuOpenStatus">
         <div class="dis_table wd100">
             <div class="dis_table_cell textleft">
                 <div v-for="(item,index) in navData" :key="index" class="header-menu color-theme-font"
@@ -17,6 +17,7 @@
                         <el-select
                                 class="select_product"
                                 id="select_product"
+                                :filterable="false"
                                 v-if="$store.getters.getLoginInfo.productList.length!==0"
                                 v-model="productSelect" placeholder="请选择">
                             <el-option
@@ -70,7 +71,8 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    <!--<div class="div-header"></div>-->
 </template>
 
 <script>
@@ -80,7 +82,7 @@
         name: "ZdHeader",
         data() {
             return {
-                productSelect: '',
+                productSelect: 'option1',
                 popoverOption: {
                     openStatus: false,
                 }
@@ -140,8 +142,8 @@
 <style lang="scss" scoped>
     @import "./../../assets/css/variable";
 
-    header {
-        flex: 0 0 90px;
+    .div-header {
+        flex: 0 0 100px;
         margin-bottom: 20px;
     }
 

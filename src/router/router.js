@@ -16,6 +16,7 @@ export const innerLayoutRouter = {
 // 独立存在的页面写在这里
 export const outerLayoutRouter = [
     {path: '/login', name: 'login',meta:{icon:'icon-test',title:'login'}, component: () => import('@/views/common/login.vue')},
+    {path: '/test3', name: 'test3',meta:{icon:'icon-test',title:'login'}, component: () => import('@/views/testmodule/test3.vue')},
 ];
 export const undefindRouter = {
     path: '/404',

@@ -6,7 +6,7 @@
                     供应链金融系统
                 </span>
         </header>
-        <main class="main-body">
+        <div class="main-body">
             <div class="content">
                 <div class="content_head dis-select">
                     <img src="http://qiniu.kajie88.com/28913648.jpg" width="100%" height="100%" alt="头像" >
@@ -15,21 +15,25 @@
                 <div class="content_role dis-select">经办人</div>
                 <div class="content_company dis-select">江苏众达供应链科技有限公司</div>
             </div>
-        </main>
+        </div>
         <div id="div-menu" class="div-menu">
             <template v-for="(item,index) of tableData">
                 <div :class="index===0?'is_active':''" class="div-menu-item div-menu-item-body dis-select pointer" :key="index">
-                    <!--<i :class="item.icon"></i>-->
-                    <i :class="'iconfont icon-shujutongji'"></i>
-                    <span class="menu-text text_clamp2">{{item.menuitem}}</span>
+                    <div class="div-menu-item-body-inner">
+                        <!--<i :class="item.icon"></i>-->
+                        <i :class="'iconfont icon-shujutongji'"></i><br>
+                        <span class="menu-text text_clamp2">{{item.menuitem}}</span>
+                    </div>
                 </div>
             </template>
 
 
             <div class="div-menu-item dis-select pointer div-menu-fold" @click="changeMenuOpen()">
                 <!--<i :class="item.icon"></i>-->
-                <i :class="'iconfont icon-shouqi'"></i>
-                <span class="menu-text text_clamp2">收起菜单</span>
+                <div class="div-menu-item-body-inner">
+                    <i :class="'iconfont icon-shouqi'"></i><br>
+                    <span class="menu-text text_clamp2">收起菜单</span>
+                </div>
             </div>
 
         </div>
@@ -41,7 +45,7 @@
 </template>
 
 <script>
-    import PerfectScrollbar from 'perfect-scrollbar';
+    // import PerfectScrollbar from 'perfect-scrollbar';
     export default {
         name: "ZdMenuLeft",
         data() {
@@ -54,18 +58,18 @@
         },
         mounted() {
             this.$nextTick(function () {
-                this.perfectScrollbar = new PerfectScrollbar('#div-menu');
+                // this.perfectScrollbar = new PerfectScrollbar('#div-menu');
             });
         },
         watch: {},
         methods: {
             changeMenuOpen(){
                 this.$store.commit('changeLeftMenuOpenStatus');
-                this.$nextTick(function () {
-                    setTimeout(()=>{
-                        this.perfectScrollbar.update();
-                    },2000)
-                });
+                // this.$nextTick(function () {
+                //     setTimeout(()=>{
+                //         this.perfectScrollbar.update();
+                //     },2000)
+                // });
             }
         },
         computed: {
@@ -147,17 +151,18 @@
             flex-wrap:wrap;
             justify-content:flex-start;
             align-content:flex-start;
-            padding: 15px 30px 10px 35px;
+            padding: 15px 15px 10px 35px;
             overflow-y: auto;
             height: calc(100vh - 85px - 225px - 40px - 28px);
             position: relative;
             .div-menu-item{
                 display: flex;
                 flex-direction:column;
-                justify-content: center;
+                justify-content: space-around;
                 flex: 0 0 85px;
                 height: 85px;
-                margin: 5px 15px;
+                margin: 15px 15px;
+                padding-top: 5px;
                 color: #445a77;
                 .iconfont{
                     font-size: 22px;
@@ -220,7 +225,7 @@
             align-items:center;
             position: relative;
             .div-menu-item-body{
-                flex: 0 0 ;
+                flex: 0 0 45px;
                 width: 45px;
                 text-align: center;
                 /*border: 1px solid #f0f0f0;*/
@@ -232,6 +237,8 @@
                     padding: 10px 0;
                     color: rgba(255,255,255,0.60);
                 }
+                position: relative;
+                z-index: 9;
                 &:hover,&.is_active{
                     background-color: $color-theme;
                     border-radius: 10px;
@@ -242,6 +249,30 @@
                         filter:brightness(220%);
 
                     }
+                }
+
+                &:hover{
+                    /*width: 100px;*/
+                    .div-menu-item-body-inner{
+                        text-align: left;
+                        position: relative;
+                        width: 120px;
+                        background-color: $color-theme;
+                        border-radius: 10px;
+                        filter:brightness(90%) ;
+                        z-index: 999;
+
+                        padding-left: 10px;
+                        box-shadow:2px 2px 10px #eeeeee;;
+                    }
+                    br{
+                        display: none;
+                    }
+                    .menu-text{
+                        display: inline-block;
+                        margin-left: 10px;
+                    }
+
                 }
             }
         }
@@ -265,6 +296,7 @@
             width: 80px;
             position: fixed;
             bottom: 0;
+            left: 0;
             text-align: center;
             padding: 20px;
             .iconfont,span{

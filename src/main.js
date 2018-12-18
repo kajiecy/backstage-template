@@ -7,8 +7,9 @@ import '@/assets/css/main.scss';//通用样式
 import '@/assets/css/common.scss';//样式工具
 import '@/assets/css/vue-index.scss' //用于修改vue样式
 import '@/assets/css/layout-index.scss' //用于修改框架的样式
-import "@/assets/css/perfect-scrollbar.scss";
-
+// import "@/assets/css/perfect-scrollbar.scss";
+// 引入自定义指令
+import '@/directives/directives'
 
 import ElementUI from 'element-ui';
 import router from './router'

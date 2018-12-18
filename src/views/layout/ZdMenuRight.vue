@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="aside-right-headerBox headerBoxNtc" :class="menuChoice==='notice'?'active':''" @click="changeRightMenu('notice')">
+            <div class="aside-right-headerBox" :class="menuChoice==='notice'?'active':''" @click="changeRightMenu('notice')">
                 <div class="headerBox color-3">
                     <i class="iconfont icon-xiaoxi1"></i>
                     <p class="ft12">通知</p>
@@ -52,12 +52,11 @@
         <div class="right-menu-switch " @click="changeRightMenuOpen">
             <i class="iconfont icon-shouqi"></i>
         </div>
-
     </div>
 </template>
 
 <script>
-    import PerfectScrollbar from 'perfect-scrollbar';
+    // import PerfectScrollbar from 'perfect-scrollbar';
     export default {
         name: "ZdMenuRight",
         data() {
@@ -70,9 +69,9 @@
 
         },
         mounted() {
-            this.$nextTick(function () {
-                this.perfectScrollbar = new PerfectScrollbar('#aside-right-content');
-            });
+            // this.$nextTick(function () {
+            //     this.perfectScrollbar = new PerfectScrollbar('#aside-right-content');
+            // });
 
         },
         watch: {},
@@ -82,7 +81,7 @@
                     this.$store.commit('changeRightMenuOpenStatus');
                 }
                 // this.perfectScrollbar.update();
-                document.querySelector('#aside-right-content').scrollTop = 0;
+                // document.querySelector('#aside-right-content').scrollTop = 0;
                 this.menuChoice = type;
 
             },
@@ -105,6 +104,7 @@
             height: 60px;
             position: relative;
             user-select:none;
+            display: flex;
         }
         .aside-right-headerBox{
             width: 75px;
@@ -112,10 +112,11 @@
             margin-left: 20px;
             border-radius: 10px 10px 0 0 ;
             background-color: #fff;
-            position: absolute;
+            position: relative;
             top: 22px;
             transition: all 0.3s;
             border: 1px solid #eeeeee ;
+            cursor: pointer;
         }
         .active{
             top: 1px;
@@ -127,25 +128,22 @@
                 font-size: 24px;
             }
         }
-        .headerBoxNtc{
-            left: 93px;
-        }
-        .headerBoxWar{
-            right: 20px;
-        }
         .aside-right-content{
             width: 100%;
-            height: calc(100vh - 90px - 20px - 60px - 10px);
+            height: calc(100vh - 100px - 20px - 60px);
             background-color: #fff;
             border-radius: 20px 0 0 0 ;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+
         }
         .divList{
             padding-top: 20px;
             margin-left: 10px;
             margin-right: 10px;
             padding-left: 10px;
+            padding-right: 10px;
             width: 280px;
             height: 125px;
             border-bottom: 1px solid #ccc;
@@ -176,6 +174,7 @@
 
         .box-card-btn{
             float: right;
+
         }
         .bottomDiv{
             margin-top: 10px;
@@ -207,7 +206,7 @@
             align-items: center;
             cursor: pointer;
             .headerBox{
-                flex: 0 0;
+                flex: 0 0 36px;
                 display: inline-block;
                 text-align: center;
                 .iconfont{

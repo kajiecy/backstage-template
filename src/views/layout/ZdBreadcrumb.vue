@@ -54,12 +54,18 @@
 
 <style lang="scss" scoped>
     .breadcrumb-body{
+        opacity: 100;
         color: #303133;
+        background-color: white;
+        position: relative;
+        padding-top: 20px;
+        z-index: 2;
+
         a{
             text-decoration: none;
         }
         .breadcrumb{
-            padding: 0px 10px 15px 10px;
+            padding: 0px 10px 20px 10px;
             .breadcrumb-item{
                 display: inline-block;
                 font-size: 14px;

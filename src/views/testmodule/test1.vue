@@ -1,18 +1,21 @@
 <template>
     <div>
-        <div class="top-buttons">
+        <div v-affix class="top-buttons">
             <el-button type="primary" size="mini">返回</el-button>
         </div>
         <audit-opinion :audit="auditData"></audit-opinion>
         <detail-template :detail="detailData"></detail-template>
-        <div style="height: 200px;border: 1px solid seagreen"></div>
+        <div style="height: 500px;border: 1px solid seagreen"></div>
+        <div style="height: 500px;border: 1px solid seagreen"></div>
         <div class="border-left-theme border-bottom-theme bw-3" style="width: 20px;height: 20px"></div>
+        <input/>
     </div>
 </template>
 
 <script>
     import detailTemplate from '@/views/components/detailTemplate.vue';
-    import auditOpinion from "@/views/components/auditOpinion.vue";
+    import auditOpinion from '@/views/components/auditOpinion.vue';
+    import affix from  '@/views/components/affix';
     export default {
         name: "test1",
         data() {
@@ -48,10 +51,14 @@
                         {label:"审核角色：",prop:"handleRole"},
                         {label:"审核时间：",prop:"handleUsername"},
                         {label:"审核人：",prop:"handleUsername"},
-                        {label:"审核结果：",prop:"dotype"},
+                        {label:"审核结果：",type:"action",prop:"dotype"},
                         {label:"审核意见：",type:"remark",prop:"message"},
                     ],
-                    data : []
+                    data : [],
+                    listAction : {
+                        "pass" : {desc:"同意",style:{color:"#0ab606"}},
+                        "back" : {desc:"退回",style:{color:"#e9a52e"}}
+                    }//审核结果的颜色
                 }
             }
         },
@@ -72,7 +79,7 @@
             }).then((result) => {
                 this.auditData.data = result.data;
                 this.auditData.data[0].message = "你大师傅is阿凡达会暗访烦死了FHSOFHDSDF";
-                //this.auditData.data[1] = this.auditData.data[0];
+                this.auditData.data[1] = this.auditData.data[0];
             });
         },
         watch: {},
@@ -80,7 +87,8 @@
         computed: {},
         components: {
             detailTemplate,
-            auditOpinion
+            auditOpinion,
+            affix
         }
     }
 </script>

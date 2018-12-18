@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+// const VueSticky = VueSticky.default // Global variable
+
 // v-dialogDrag: 弹窗拖拽
 Vue.directive('dialogDrag', {
     bind(el) { //, binding, vnode, oldVnode
@@ -47,7 +49,13 @@ Vue.directive('dialogDrag', {
         }
     }
 })
+Vue.directive('affix', {
+    inserted(el) {
+        const scrollBody = document.querySelector('#router-body');
+        scrollBody.onscroll= function(){el.style.top = scrollBody.scrollTop+"px"}
 
+    }
+})
 // // 注册一个全局自定义指令 v-checkParam
 // // 在需要校验的input框上加class="clickCheck",并且加上自定义指令
 // // 示例代码：v-checkParam="{required:true,message1:'请输入手机号',regex:/^1[34578]\d{9}$/,message2:'手机号码有误，请重填'}"

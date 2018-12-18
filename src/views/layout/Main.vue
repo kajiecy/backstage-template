@@ -6,11 +6,13 @@
         <div class="right-view">
             <zd-header></zd-header>
             <div class="layout-inner">
-                <div class="layout-content" :class="$store.state.app.leftMenuOpenStatus">
-                <!--<el-card class="layout-content box-card">-->
-                    <zd-breadcrumb></zd-breadcrumb>
-                    <router-view></router-view>
-                <!--</el-card>-->
+                <div class="layout-content" id="layout-content" :class="$store.state.app.leftMenuOpenStatus">
+                    <div class="layout-content-inner">
+                        <zd-breadcrumb></zd-breadcrumb>
+                        <div class="router-body" id="router-body">
+                            <router-view></router-view>
+                        </div>
+                    </div>
                 </div>
                 <zd-menu-right></zd-menu-right>
             </div>
@@ -23,11 +25,14 @@
     import ZdMenuLeft from './ZdMenuLeft';
     import ZdMenuRight from './ZdMenuRight';
     import ZdBreadcrumb from './ZdBreadcrumb';
+    // import PerfectScrollbar from 'perfect-scrollbar';
 
     export default {
         name: "Main",
         data() {
-            return {}
+            return {
+                perfectScrollbar:{},
+            }
         },
         created() {
 
@@ -38,17 +43,17 @@
         watch: {},
         methods: {
             appInit(){
-                this.$post(this.$store.state.reqUrl.getSessionInfo,{
-                    productCode:'',
-                }).then(result=>{
-                    console.log("结果为：",result)
-
-                    this.$store.commit('setAsideMenuInfo',result.menus);
-                    this.$store.commit('setLoginInfo',result);
-                    // this.$store.commit("changeAsideMenuInfoOpenFlag",this.$route.name);
-                    // sessionStorage.setItem('userI',JSON.stringify(result));
-                    // this.$store.commit('giveuserInfo',result);
-                })
+                // this.$post(this.$store.state.reqUrl.getSessionInfo,{
+                //     productCode:'',
+                // }).then(result=>{
+                //     console.log("结果为：",result)
+                //
+                //     this.$store.commit('setAsideMenuInfo',result.menus);
+                //     this.$store.commit('setLoginInfo',result);
+                //     // this.$store.commit("changeAsideMenuInfoOpenFlag",this.$route.name);
+                //     // sessionStorage.setItem('userI',JSON.stringify(result));
+                //     // this.$store.commit('giveuserInfo',result);
+                // })
             }
         },
         computed: {},
@@ -62,6 +67,13 @@
 </script>
 
 <style scoped>
-
+    .router-body{
+        padding-right: 17px;
+        padding-top: 70px;
+        margin-top: -60px;
+        height: calc(100vh - 100px - 20px );
+        position: relative;
+        overflow-y: auto;
+    }
 
 </style>

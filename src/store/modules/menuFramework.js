@@ -1,7 +1,68 @@
 const menuFramework = {
     state: {
         //菜单的主体信息
-        asideMenuInfo: [],
+        asideMenuInfo: [
+    {
+        "id": 105,
+        "menuitem": "菜单1",
+        "resUrl": null,
+        "parentId": 0,
+        "icon": "iconfont icon-shouye",
+        "menulevel": 1,
+        "route": "home",
+        "orderindex": 99,
+        "operauthid": null,
+        "menudesc": null,
+        "buttons": [ ],
+        "childMenus": [
+            {
+                "id": 163,
+                "menuitem": "菜单1-1",
+                "icon": "fa fa-building-o",
+                "route": "enterpriseInfo",
+                "childMenus": null
+            },
+            {
+                "id": 163,
+                "menuitem": "菜单1-2",
+                "icon": "fa fa-building-o",
+                "route": "enterpriseInfo",
+                "childMenus": null
+            },
+            {
+                "id": 163,
+                "menuitem": "菜单1-3",
+                "icon": "fa fa-building-o",
+                "route": "enterpriseInfo",
+                "childMenus": null
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "menuitem": "菜单2",
+        "icon": "iconfont icon-kehuguanli",
+        "route": null,
+    },
+    {
+        "id": 38,
+        "menuitem": "菜单3",
+        "icon": "iconfont icon-kehuguanli",
+        "route": null,
+    },
+    {
+        "id": 38,
+        "menuitem": "菜单4",
+        "icon": "iconfont icon-kehuguanli",
+        "route": null,
+    },
+    {
+        "id": 38,
+        "menuitem": "菜单5",
+        "icon": "iconfont icon-kehuguanli",
+        "route": null,
+    }
+],
         //二级菜单的选择标识(默认选择首页)
         parentIndex: 0,
         count: 0,
