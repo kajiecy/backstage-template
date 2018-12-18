@@ -1,6 +1,8 @@
 <template>
     <div>
-        {{$route.name}}
+        <main style="border: 1px seagreen solid;">
+            {{$route.name}}
+        </main>
     </div>
 </template>
 
