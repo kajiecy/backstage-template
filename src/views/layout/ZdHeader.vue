@@ -2,8 +2,11 @@
     <div class="div-header" :class="$store.state.app.leftMenuOpenStatus">
         <div class="dis_table wd100">
             <div class="dis_table_cell textleft">
-                <div v-for="(item,index) in navData" :key="index" class="header-menu color-theme-font"
-                     :class="index===0?'is_active':''">
+                <div v-for="(item,index) in navData"
+                    class="header-menu color-theme-font"
+                    :key="index"
+                    :class="item.isActive?'is_active':''"
+                    @click="changeParentMenu(item)">
                     <i class="iconfont" :class="item.icon"></i>
                     <div>{{item.menuitem}}</div>
                 </div>
@@ -28,7 +31,6 @@
                             </el-option>
                         </el-select>
                     </div>
-
                     <div class="dis_table_cell header-menu-right menu-right-popover">
                         <el-popover
                                 placement="bottom-end"
@@ -99,18 +101,21 @@
             clickPicker() {
                 console.log(this.$refs.themePicker)
                 this.$refs.themePicker.$el.click();
-
             },
             popoverShow() {
-                console.log('show')
                 this.popoverOption.openStatus = true;
             },
             popoverHide() {
-                console.log('hide')
                 this.popoverOption.openStatus = false;
             },
             getColors(){
                 return 'color-'+(Math.random()*10+1).toFixed(0);
+            },
+            changeParentMenu(parenmenu){
+                this.$store.commit('changeParentMenuActive',{routerId:parenmenu.id});
+                if(parenmenu.childMenus&&parenmenu.childMenus.length>0){
+                    this.$router.push({name:parenmenu.childMenus[0].route});
+                }
             }
         },
         computed: {
@@ -120,7 +125,6 @@
                  * computed 此时仅监听 this.$store.state.menuObj.parentIndex 和 this.$store.state.menuObj.asideMenuInfo 更改flag是 两个变量的地址都不变
                  * 因此此时我选择添加一个count 每次执行操作是增加修改count 实现对象监听联动
                  */
-                this.$store.getters.getCount;
                 let data = this.$store.getters.getAsideMenuInfo;
                 if (data != null && data.length > 0) {
                     return this.$store.getters.getAsideMenuInfo;
@@ -129,7 +133,6 @@
                 }
             },
             shortcutMenuData() {
-                console.log(this.$store.state.menuFramework.asideMenuInfo || [])
                 return this.$store.state.menuFramework.asideMenuInfo || [];
             },
         },

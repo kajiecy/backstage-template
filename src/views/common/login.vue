@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="loginBox">
-            <p class="bigTitle typeface">众医宝 • 供应链金融系统</p>
+            <p class="bigTitle typeface">登录页标题</p>
             <div class="page-container typeface">
                 <h1 style="margin-top: 25px;">登录</h1>
                 <input type="text" name="username" class="username" placeholder="请输入用户名" id="username" ref='name'>
@@ -63,16 +63,14 @@
                 }
             },
             login() {
-                this.$post(this.$store.state.reqUrl.login,{
-                    username: this.$refs.name.value,
-                    password: this.$refs.pwd.value,
-                    code: ''
-                }).then(()=>{ //result
-                    // console.log("login结果为：",result)
-                    this.$router.push('/home');
-                })
-
-
+                // this.$post(this.$store.state.reqUrl.login,{
+                //     username: this.$refs.name.value,
+                //     password: this.$refs.pwd.value,
+                //     code: ''
+                // }).then(()=>{ //result
+                //     // console.log("login结果为：",result)
+                // })
+                this.$router.push('/home');
             },
 
         },

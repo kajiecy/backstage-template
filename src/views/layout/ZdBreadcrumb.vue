@@ -37,9 +37,7 @@
 
         },
         mounted() {
-            this.$store.commit("pushToBreadcrumbList",{name:'路径1', route:''});
-            this.$store.commit("pushToBreadcrumbList",{name:'路径2', route:'aaa'});
-            this.$store.commit("pushToBreadcrumbList",{name:'路径3', route:''});
+
         },
         watch: {},
         methods: {},

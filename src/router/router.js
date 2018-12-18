@@ -8,15 +8,25 @@ export const innerLayoutRouter = {
     redirect: '/login',
     component: Main,
     children: [
-        {path: 'home', name: 'test1',meta:{icon:'icon-test',title:'test1'}, component: () => import('@/views/testmodule/test1.vue')},
-        {path: 'test2', name: 'test2',meta:{icon:'icon-test',title:'test2'}, component: () => import('@/views/testmodule/test2.vue')},
+        {path: 'test1', name: 'test1',meta:{}, component: () => import('@/views/testmodule/test1.vue')},
+        {path: 'home', name: 'home',meta:{}, component: () => import('@/views/testmodule/home.vue')},
+
+        {path: 'menu11', name: 'menu11',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+        {path: 'menu12', name: 'menu12',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+        {path: 'menu13', name: 'menu13',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+
+        {path: 'menu21', name: 'menu21',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+        {path: 'menu22', name: 'menu22',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+
+        {path: 'menu31', name: 'menu31',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+        {path: 'menu32', name: 'menu32',meta:{}, component: () => import('@/views/testmodule/menu1.vue')},
+
     ]
 };
 
 // 独立存在的页面写在这里
 export const outerLayoutRouter = [
-    {path: '/login', name: 'login',meta:{icon:'icon-test',title:'login'}, component: () => import('@/views/common/login.vue')},
-    {path: '/test3', name: 'test3',meta:{icon:'icon-test',title:'login'}, component: () => import('@/views/testmodule/test3.vue')},
+    {path: '/login', name: 'login',meta:{}, component: () => import('@/views/common/login.vue')},
 ];
 export const undefindRouter = {
     path: '/404',

@@ -3,7 +3,7 @@
         <header class="header-body">
                 <i class="iconfont icon-gongyinglianjinrong"></i>
                 <span class="company-text dis-select">
-                    供应链金融系统
+                    卡杰后台管理
                 </span>
         </header>
         <div class="main-body">
@@ -18,8 +18,8 @@
         </div>
         <div id="div-menu" class="div-menu">
             <template v-for="(item,index) of tableData">
-                <div :class="index===0?'is_active':''" class="div-menu-item div-menu-item-body dis-select pointer" :key="index">
-                    <div class="div-menu-item-body-inner">
+                <div :class="item.isActive?'is_active':''" class="div-menu-item div-menu-item-body dis-select pointer" :key="index">
+                    <div class="div-menu-item-body-inner" @click="pushViews(item.route)">
                         <!--<i :class="item.icon"></i>-->
                         <i :class="'iconfont icon-shujutongji'"></i><br>
                         <span class="menu-text text_clamp2">{{item.menuitem}}</span>
@@ -38,8 +38,8 @@
 
         </div>
         <div class="foot dis-select">
-            Copyright © 2012-2018 江苏众达 <br>
-            宁ICP备16005435号-1
+            Copyright © 2012-2018 XXXXX <br>
+            宁ICP备8888888号-1
         </div>
     </aside>
 </template>
@@ -57,19 +57,20 @@
 
         },
         mounted() {
-            this.$nextTick(function () {
-                // this.perfectScrollbar = new PerfectScrollbar('#div-menu');
-            });
+            //刷新时根据路由名称 渲染 menu的active
+            this.$store.commit('changeChildMenuActive',{routerName:this.$route.name});
         },
-        watch: {},
+        watch: {
+            '$route'(newVal){
+                this.$store.commit('changeChildMenuActive',{routerName:newVal.name});
+            }
+        },
         methods: {
             changeMenuOpen(){
                 this.$store.commit('changeLeftMenuOpenStatus');
-                // this.$nextTick(function () {
-                //     setTimeout(()=>{
-                //         this.perfectScrollbar.update();
-                //     },2000)
-                // });
+            },
+            pushViews(routerName){
+                this.$router.push({name:routerName});
             }
         },
         computed: {
@@ -79,7 +80,6 @@
                  * computed 此时仅监听 this.$store.state.menuObj.parentIndex 和 this.$store.state.menuObj.asideMenuInfo 更改flag是 两个变量的地址都不变
                  * 因此此时我选择添加一个count 每次执行操作是增加修改count 实现对象监听联动
                  */
-                this.$store.getters.getCount;
                 let data = this.$store.getters.getAsideMenuInfo;
                 if (data != null && data.length > 0 && data[this.$store.getters.getParentIndex] != null) {
                     return data[this.$store.getters.getParentIndex].childMenus;

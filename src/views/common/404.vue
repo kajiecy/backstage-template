@@ -35,7 +35,7 @@
     watch: {},
     methods: {
       returnPage(){
-        this.$router.push("/");
+        this.$router.push("/home");
       }
     },
     computed: {},

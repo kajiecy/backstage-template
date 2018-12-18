@@ -38,10 +38,10 @@
         <div id="aside-right-content" class="aside-right-content box-shadow dis-select">
             <div v-for="item in 10">
                 <div class="divList">
-                    <span>保理池融资</span>
+                    <span>一条新消息</span>
                     <div class="bottom clearfix">
                         <div class="bottomDiv content-font-color">
-                            江苏洋河集团有限公司付款通知单已到期，请确认付款
+                            民进党当选议员退党 怒称：这是什么政党啊！民进党在台湾地区
                         </div>
                     </div>
                     <el-button type="primary" icon="el-icon-edit" size="mini" class="box-card-btn" >立即办理</el-button>
