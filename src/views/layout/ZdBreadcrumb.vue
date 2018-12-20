@@ -53,7 +53,7 @@
 <style lang="scss" scoped>
     .breadcrumb-body{
         opacity: 100;
-        color: #303133;
+        color: #606266;
         background-color: white;
         position: relative;
         padding-top: 20px;

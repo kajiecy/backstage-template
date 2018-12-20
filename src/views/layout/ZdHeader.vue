@@ -143,7 +143,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "./../../assets/css/variable";
+    @import "../../../../../ZD/Vue-项目/vue-zhongda-base/src/assets/css/variable";
 
     .div-header {
         flex: 0 0 100px;

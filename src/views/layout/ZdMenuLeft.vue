@@ -93,7 +93,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "./../../assets/css/variable";
+    @import "../../../../../ZD/Vue-项目/vue-zhongda-base/src/assets/css/variable";
     .aside-body.left-menu-open{
         /*transition: all 0.5s;*/
         flex: 0 0 300px;
